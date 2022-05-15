@@ -22,14 +22,12 @@ function onFormSubmit(e) {
     // console.log("Kalush Orcestra");
     e.target.reset();
     localStorage.removeItem(STORAGE_KEY);
+    console.log(formData);
 }
 
 function onFormInput(e) {
-    // const inputValue = e.target.value;
-    // console.log(inputValue);
-
     formData[e.target.name] = e.target.value;
-    console.log(formData);
+    // console.log(formData);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData))
 }
 
@@ -40,6 +38,5 @@ function fillTextareaInput() {
         refs.textarea.value = JSON.parse(saveInputValue).message;
         refs.email.value = JSON.parse(saveInputValue).email;
     }
-
 
 }
